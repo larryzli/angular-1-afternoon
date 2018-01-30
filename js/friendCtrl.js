@@ -1,13 +1,30 @@
 angular.module("myApp").controller("friendCtrl", function($scope) {
     const s = $scope;
     s.test = "Connected";
-    s.filters = {
-        name: "",
-        state: ""
+    // s.filters = {
+    //     name: "",
+    //     state: ""
+    // };
+    // s.sorts = {
+    //     property: "name",
+    //     direction: "+"
+    // };
+    s.options = {
+        available: [
+            { id: "name", name: "Name" },
+            { id: "friend_count", name: "#Friends" },
+            { id: "location.city", name: "City" },
+            { id: "location.state", name: "State" },
+            { id: "location.country", name: "Country" }
+        ],
+        selected: { id: "name", name: "Name" }
     };
-    s.sorts = {
-        property: "name",
-        direction: "+"
+    s.directions = {
+        available: [
+            { id: "+", name: "Ascending" },
+            { id: "-", name: "Descending" }
+        ],
+        selected: { id: "+", name: "Ascending" }
     };
     s.friends = [
         {
